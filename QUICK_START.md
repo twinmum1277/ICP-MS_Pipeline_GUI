@@ -57,6 +57,16 @@ Wait for packages to install (~1-2 minutes).
 
 ### Prepare Your Files:
 
+**Template files are included in the download!** Look in the main folder for:
+- `digest_template.csv`
+- `icv_template.csv`  
+- `sort_template.csv`
+- `crm_values_template.csv`
+
+Copy these templates to your working folder and replace the example data with your actual data.
+
+---
+
 You need 3-4 files for each analysis:
 
 1. **SORT file** (required)

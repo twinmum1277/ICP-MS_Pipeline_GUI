@@ -177,20 +177,36 @@ Batch_2025-11-05/
 
 ### Using the Template Files:
 
-The software includes template files to help you get started:
+The software includes template files to help you get started. **These are included when you download/clone the repository.**
+
+#### **Accessing the Templates:**
+
+After downloading the software, you'll find these files in the main folder:
+- `digest_template.csv` - Example dilution factors
+- `icv_template.csv` - Example ICV targets
+- `sort_template.csv` - Example MassHunter export format
+- `crm_values_template.csv` - Example REF file (long format)
+
+**Location**: Same folder as `icpms_gui.py` and `process_icpms_batch.py`
 
 #### 1. **For Your First Run:**
-1. Copy the template files to your working folder:
-   - `digest_template.csv` → rename to `your_digest.csv`
-   - `icv_template.csv` → rename to `your_icv.csv`
-   - `sort_template.csv` → just for reference (MassHunter creates your actual SORT file)
+1. **Copy** the template files to your working folder:
+   ```bash
+   # Mac/Linux
+   cp digest_template.csv ~/Desktop/my_analysis/digest.csv
+   cp icv_template.csv ~/Desktop/my_analysis/icv.csv
+   
+   # Or just copy/paste in Finder/File Explorer
+   ```
 
-2. Open each template in Excel/Numbers/Google Sheets
+2. **Open each template** in Excel, Numbers, or Google Sheets
 
 3. **Replace template data with your actual data**:
    - Keep the column headers exactly as shown
    - Replace the example values with your real values
-   - Save
+   - Save (keep as CSV or save as Excel for DIGEST)
+
+**Tip**: Don't edit the original templates! Copy them first so you always have clean templates to start from.
 
 #### 2. **Building Your Master Files:**
 
