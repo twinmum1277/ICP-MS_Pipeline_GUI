@@ -744,10 +744,10 @@ def process_batch(sort_path: str,
     icv_data, ref_data = compute_icv_ref(corrected_df, icv_df, ref_df)
     qc_summary_df = select_best_channels(icv_data, ref_data, chan_map)
 
-    # samples only (not blanks/ICV/SRM/DUP)
-    # Exclude anything starting with BLANK_, ICV_, SRM_, or containing DUP
+    # samples only (not blanks/ICV/ICB/SRM/DUP)
+    # Exclude QC samples: BLANK, ICV, ICB, SRM_, and duplicates (DUP)
     samples_df = corrected_df[
-        ~(corrected_df["sample_id"].str.contains("BLANK|ICV|DUP", na=False, case=False) |
+        ~(corrected_df["sample_id"].str.contains("BLANK|ICV|ICB|DUP", na=False, case=False) |
           corrected_df["sample_id"].str.startswith("SRM_", na=False))
     ].copy()
 
