@@ -63,8 +63,8 @@ class ICPMS_GUI(tk.Tk):
         self.icv_entry.grid(row=4, column=1, **pad)
         ttk.Button(self, text="Browse…", command=self._pick_icv).grid(row=4, column=2, **pad)
 
-        # REF (optional)
-        ttk.Label(self, text="REF values file (optional):").grid(row=5, column=0, sticky="w", **pad)
+        # REF
+        ttk.Label(self, text="REF values file:").grid(row=5, column=0, sticky="w", **pad)
         self.ref_entry = ttk.Entry(self, width=50)
         self.ref_entry.grid(row=5, column=1, **pad)
         ttk.Button(self, text="Browse…", command=self._pick_ref).grid(row=5, column=2, **pad)
