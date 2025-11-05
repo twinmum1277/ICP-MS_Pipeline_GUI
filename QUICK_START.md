@@ -85,7 +85,7 @@ You need 3-4 files for each analysis:
    - CSV format
    - See `icv_template.csv` for format
 
-4. **REF file** (optional)
+4. **REF file**
    - Reference material certified values
    - Your existing SRMs.csv works perfectly!
 
