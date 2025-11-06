@@ -358,6 +358,55 @@ The application generates an Excel file (`Batch_Results.xlsx`) with 4 sheets:
 
 ## Troubleshooting
 
+### Windows: "Python not found" Error
+
+**Symptom**: After installing Python, Command Prompt says "Python not found" or opens Microsoft Store.
+
+**Cause**: Python is not in your system PATH, or Windows app execution aliases are interfering.
+
+**Solution 1 - Use `py` command instead:**
+```bash
+py icpms_gui.py        # Instead of: python icpms_gui.py
+py -m pip install -r requirements.txt    # For installing packages
+```
+
+**Solution 2 - Disable Windows Python aliases:**
+1. Press **Windows key**, type "Manage app execution aliases"
+2. Click to open
+3. Turn **OFF** these two items:
+   - App Installer python.exe
+   - App Installer python3.exe
+4. Close settings and try again
+
+**Solution 3 - Add Python to PATH (Permanent Fix):**
+1. Find where Python is installed:
+   ```bash
+   py -c "import sys; print(sys.executable)"
+   ```
+   This shows something like: `C:\Users\YourName\AppData\Local\Programs\Python\Python312\python.exe`
+
+2. Copy the folder path (everything before `\python.exe`)
+
+3. Add to PATH:
+   - Press **Windows key**, type "Environment Variables"
+   - Click "Edit the system environment variables"
+   - Click **"Environment Variables..."** button
+   - Under "System variables", find **"Path"**, click **"Edit"**
+   - Click **"New"** and paste the Python folder path
+   - Click **"New"** again and add `\Scripts` to the end of that path
+   - Example paths to add:
+     - `C:\Users\YourName\AppData\Local\Programs\Python\Python312`
+     - `C:\Users\YourName\AppData\Local\Programs\Python\Python312\Scripts`
+   - Click **OK** on all dialogs
+
+4. **Close and reopen Command Prompt**
+
+5. Test: `python --version`
+
+**Workaround (not recommended)**: Move the software folder into your Python installation folder. This works but makes it harder to organize your projects.
+
+---
+
 ### "File picker not opening"
 - **Mac**: Resize the GUI window to ensure Browse buttons are visible
 - **Solution**: Clear Python cache: `rm -rf __pycache__` then relaunch

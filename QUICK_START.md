@@ -173,6 +173,7 @@ In your SORT file, name samples:
 
 | Issue | Cause | Solution |
 |-------|-------|----------|
+| **Windows**: "Python not found" | Python not in PATH | Use `py icpms_gui.py` instead, or see INSTALLATION_GUIDE.md |
 | File picker doesn't open | GUI window too small | Resize window to see buttons |
 | "Sample not found in DIGEST" | Name mismatch | Ensure names match (case-insensitive, spaces→underscores) |
 | All df values = 1 | Sample names don't match | Check DIGEST sample names match SORT |
